@@ -1,0 +1,70 @@
+version: 2
+enable-beta-ecosystems: true
+
+updates:
+    - package-ecosystem: "github-actions"
+      directory: "/"
+      schedule:
+          interval: "daily"
+
+    - package-ecosystem: "cargo"
+      directory: "/"
+      schedule:
+          interval: "daily"
+      versioning-strategy: lockfile-only
+      
+
+    - package-ecosystem: "cargo"
+      directory: "/cli"
+      schedule:
+          interval: "daily"
+      versioning-strategy: lockfile-only
+      
+
+    - package-ecosystem: "cargo"
+      directory: "/core"
+      schedule:
+          interval: "daily"
+      versioning-strategy: lockfile-only
+      
+
+    - package-ecosystem: "cargo"
+      directory: "/deno_typescript"
+      schedule:
+          interval: "daily"
+      versioning-strategy: lockfile-only
+      
+
+    - package-ecosystem: "npm"
+      directory: "/std/node/tests"
+      schedule:
+          interval: "daily"
+      versioning-strategy: increase
+      ignore:
+          - dependency-name: "tailwindcss"
+            versions:
+                - "^4.0.0"
+
+    - package-ecosystem: "cargo"
+      directory: "/test_plugin"
+      schedule:
+          interval: "daily"
+      versioning-strategy: lockfile-only
+      
+
+    - package-ecosystem: "cargo"
+      directory: "/tools/hyper_hello"
+      schedule:
+          interval: "daily"
+      versioning-strategy: lockfile-only
+      
+
+    - package-ecosystem: "npm"
+      directory: "/tools"
+      schedule:
+          interval: "daily"
+      versioning-strategy: increase
+      ignore:
+          - dependency-name: "tailwindcss"
+            versions:
+                - "^4.0.0"
